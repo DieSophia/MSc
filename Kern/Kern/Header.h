@@ -13,33 +13,52 @@
 #include <string>
 
 
-struct Tag {
-    std::string tagname;
-    std::string beschreibung;
+class IGraphData {
+public:
+    using name = std::string;
+    using beschreibung = std::string;
+
+    struct Knoten {
+        int id;
+        double lat;
+        double lon;
+
+        std::map<name, beschreibung> tags;
+    };
+
+    struct Kanteneigenschaften {
+        double gewicht;
+        std::map<name, beschreibung> tags;
+    };
+
+
+    // Die Knotenliste entält jeweils Paare von Knoten und deren Ausgangsknoten samt den Eigenschaften der zugehörigen Kante.
+    using adjazenzMap = std::map<int, std::map<int, Kanteneigenschaften>>;
+
+    struct Graph {
+        int id;
+        adjazenzMap adj;
+        std::map<int, Knoten> knotenmap;
+    };
+
+    static void addKante(Graph* g, Knoten eingangsknoten, Knoten ausgangsknoten, Kanteneigenschaften eigenschaften) {
+        addKnoten(g, eingangsknoten);
+        addKnoten(g, ausgangsknoten);
+        std::map<int, Kanteneigenschaften> adj_knoten = (*g).adj[eingangsknoten.id];
+        adj_knoten.insert({ ausgangsknoten.id, eigenschaften });
+        std::map<int, Kanteneigenschaften>::iterator it = adj_knoten.begin();
+        while (it != adj_knoten.end()) {
+            printf("%d\n", (*it).first);
+            it++;
+        }
+        (*g).adj[eingangsknoten.id] = adj_knoten;
+    }
+    
+     static void addKnoten(Graph* g, Knoten k) {
+        (*g).knotenmap.insert({ k.id, k });
+    }
 };
 
-struct Kanteneigenschaften {
-    double gewicht;
-    std::list<Tag> tags;
-};
-
-struct Knoten {
-    int id;
-    double lat;
-    double lon;
-    std::list<Tag> tags;
-};
-
-// Die Knotenliste entält jeweils Paare von Knoten und deren Ausgangsknoten samt den Eigenschaften der zugehörigen Kante.
-using adjazenzMap = std::map<int, std::map<int, Kanteneigenschaften>>;
-
-struct Graph {
-    adjazenzMap adj;
-    std::map<int, Knoten> knotenmap;
-} graph = { {},{} };
+extern KERN_API void calculateKuerzestenWeg(IGraphData::Graph g, int quellknoten);// Gibt kürzesten Weg von s aus
 
 
-// Beim Hinzufügen einer Kante werden automatisch die Knoten hinzugefügt.
-extern KERN_API void addKante(Knoten eingangsknoten, Knoten ausgangsknoten, Kanteneigenschaften eigenschaften);
-extern KERN_API void addKnoten(Knoten v);
-extern KERN_API void calculateKuerzestenWeg(int quellknoten);// Gibt kürzesten Weg von s aus

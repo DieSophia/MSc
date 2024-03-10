@@ -2,28 +2,9 @@
 #include "Header.h"
 #include <typeinfo>
 
+IGraphData* op;
 
-void addKnoten(Knoten u) {
-    graph.knotenmap.insert({ u.id, u });
-}
-
-void addKante(Knoten kanteneingang, Knoten kantenausgang, Kanteneigenschaften eigenschaften)
-{
-    addKnoten(kanteneingang);
-    addKnoten(kantenausgang);
-    std::map<int, Kanteneigenschaften> adj_knoten = graph.adj[kanteneingang.id];
-    adj_knoten.insert({ kantenausgang.id, eigenschaften });
-    printf("Kanteneingangs-ID %d Kantenausgangs-ID %d Laenge adj_knoten %d\n", kanteneingang.id, kantenausgang.id, (int)adj_knoten.size());
-    std::map<int, Kanteneigenschaften>::iterator it = adj_knoten.begin();
-    while (it != adj_knoten.end()) {
-        printf("%d\n", (*it).first);
-        it++;
-    }
-    graph.adj[kanteneingang.id] = adj_knoten;
-
-}
-
-void printKuerzesteWege(int src, std::map<int, double> dist) {
+static void printKuerzesteWege(int src, std::map<int, double> dist) {
     // Gib die kürzesten Distanzen aus dist aus.
     printf("Knotenabstand von Quellknoten %d\n", src);
     std::map<int, double>::iterator it = dist.begin();
@@ -34,7 +15,7 @@ void printKuerzesteWege(int src, std::map<int, double> dist) {
 }
 
 // Gibt den kürzesten Weg von dem Knoten mit der übergebenen ID zu allen anderen Knoten aus.
-void calculateKuerzestenWeg(int src)
+void calculateKuerzestenWeg(IGraphData::Graph g, int src)
 {
     // Priority Queue erzeugen, um vorprozessierte Knoten zu speichern. (SPÄTER ERSETZEN DURCH FIBONACCI-HEAP?)
     std::priority_queue< std::pair<double, int>, std::vector<std::pair<double, int>>, std::greater<std::pair<double, double>> >
@@ -42,8 +23,8 @@ void calculateKuerzestenWeg(int src)
 
     // Initialisiere die Knotendistanzen für alle Knoten, die Ausgangskanten haben, als unendlich.
     std::map<int, double> dist;
-    std::map<int, Knoten>::iterator i = graph.knotenmap.begin();
-    while (i != graph.knotenmap.end()) {
+    std::map<int, IGraphData::Knoten>::iterator i = g.knotenmap.begin();
+    while (i != g.knotenmap.end()) {
         dist[(*i).first] = INF;
         i++;
     }
@@ -57,8 +38,8 @@ void calculateKuerzestenWeg(int src)
         int u = pq.top().second;
         pq.pop();
 
-        std::map<int, Kanteneigenschaften>::iterator i;
-        for (i = graph.adj[u].begin(); i != graph.adj[u].end(); ++i) {
+        std::map<int, IGraphData::Kanteneigenschaften>::iterator i;
+        for (i = g.adj[u].begin(); i != g.adj[u].end(); ++i) {
             // Bestimme den nächsten zu betrachtenden Kantenausgang und das Gewicht der Kante u -> v.
             int v = (*i).first;
             double gewicht = (*i).second.gewicht;
