@@ -15,7 +15,7 @@ static void printKuerzesteWege(int src, std::map<int, double> dist) {
 }
 
 // Gibt den kürzesten Weg von dem Knoten mit der übergebenen ID zu allen anderen Knoten aus.
-void calculateKuerzestenWeg(IGraphData::Graph g, int src)
+void calculateIsochrone(IGraphData::Graph g, int src, double isochronenlinienDistanz)
 {
     // Priority Queue erzeugen, um vorprozessierte Knoten zu speichern. (SPÄTER ERSETZEN DURCH FIBONACCI-HEAP?)
     std::priority_queue< std::pair<double, int>, std::vector<std::pair<double, int>>, std::greater<std::pair<double, double>> >
@@ -29,11 +29,14 @@ void calculateKuerzestenWeg(IGraphData::Graph g, int src)
         i++;
     }
 
+    std::map<int, int> vorgaenger = {};
     // Füge den Quellknoten hinzu und setze seine Distanz zu sich selbst auf 0.
     pq.push(std::make_pair(.0, src));
     dist[src] = .0;
+    vorgaenger[src] = -1; //Das soll per definitionem bedeuten, dass es keinen Vorgaenger gibt.
+    std::map<int, IGraphData::Knoten> isochronenkandidaten;
 
-    // Dijkstra endet erst, wenn keine Knoten mehr übrig oder alle übrigen unerreichbar sind.
+    // Dijkstra endet erst, wenn das Abbruchkriterium für alle übrigen Knoten erfüllt ist (d.h. isochronenlinienDistanz wird überschritten) oder keine Knoten mehr übrig sind.
     while (!pq.empty()) {
         int u = pq.top().second;
         pq.pop();
@@ -47,10 +50,23 @@ void calculateKuerzestenWeg(IGraphData::Graph g, int src)
             // Wenn der Weg durch den Knoten der ID u kürzer ist als alle bisher bekannten Wege.
             if (dist[v] > dist[u] + gewicht) {
                 dist[v] = dist[u] + gewicht;
-                pq.push(std::make_pair(dist[v], v));
+                vorgaenger[v] = u;
+                //Der Knoten soll nur dann in der Priority Queue landen, wenn seine Nachbarn auch noch auf dem Polygonrand oder im Polgon selbst liegen könnten.
+                if (dist[v] < isochronenlinienDistanz) {
+                    pq.push(std::make_pair(dist[v], v));
+                }
+                else if (dist[v] == isochronenlinienDistanz) {
+                    isochronenkandidaten[v] = g.knotenmap[v];
+                }
+                else if (dist[v] > isochronenlinienDistanz) {
+                    isochronenkandidaten[u] = g.knotenmap[u];
+                }
             }
         }
     }
+
+    //Aus den Isochronenkandidaten müssen auch interne Zyklen (innere Ränder) nicht aussortiert werden.
+    //Nächste Schwierigkeit: welche der Kandidaten bilden jeweils einen gemeinsamen Zyklus?
 
     printKuerzesteWege(src, dist);
 }

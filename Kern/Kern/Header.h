@@ -59,6 +59,6 @@ public:
     }
 };
 
-extern KERN_API void calculateKuerzestenWeg(IGraphData::Graph g, int quellknoten);// Gibt kürzesten Weg von s aus
+extern KERN_API void calculateIsochrone(IGraphData::Graph g, int quellknoten, double isochronenlinienDistanz);// Gibt kürzesten Weg von s aus
 
 

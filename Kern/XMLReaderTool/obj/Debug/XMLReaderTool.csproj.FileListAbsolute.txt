@@ -1,0 +1,7 @@
+C:\Users\Subira\source\repos\Kern\XMLReaderTool\bin\Debug\XMLReaderTool.exe.config
+C:\Users\Subira\source\repos\Kern\XMLReaderTool\bin\Debug\XMLReaderTool.exe
+C:\Users\Subira\source\repos\Kern\XMLReaderTool\bin\Debug\XMLReaderTool.pdb
+C:\Users\Subira\source\repos\Kern\XMLReaderTool\obj\Debug\XMLReaderTool.csproj.AssemblyReference.cache
+C:\Users\Subira\source\repos\Kern\XMLReaderTool\obj\Debug\XMLReaderTool.csproj.CoreCompileInputs.cache
+C:\Users\Subira\source\repos\Kern\XMLReaderTool\obj\Debug\XMLReaderTool.exe
+C:\Users\Subira\source\repos\Kern\XMLReaderTool\obj\Debug\XMLReaderTool.pdb

@@ -1,0 +1,10 @@
+﻿  pch.cpp
+  dllmain.cpp
+  OsmReader.cpp
+C:\Users\Subira\source\repos\Kern\OsmReader\OsmReaderDefinitionen.h(39,23): error C2144: Syntaxfehler: "void" sollte auf ";" folgen
+  (Quelldatei „/OsmReader.cpp“ wird kompiliert)
+  
+C:\Users\Subira\source\repos\Kern\OsmReader\OsmReaderDefinitionen.h(39,28): error C4430: Fehlender Typspezifizierer - int wird angenommen. Hinweis: "default-int" wird von C++ nicht unterstützt.
+  (Quelldatei „/OsmReader.cpp“ wird kompiliert)
+  
+  Code wird generiert...

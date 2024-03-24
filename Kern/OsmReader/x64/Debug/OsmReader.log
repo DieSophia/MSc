@@ -1,0 +1,18 @@
+﻿  pch.cpp
+  dllmain.cpp
+  OsmReader.cpp
+  Code wird generiert...
+OsmReader.obj : error LNK2019: Verweis auf nicht aufgelöstes externes Symbol "__imp_XML_ParserCreate" in Funktion "main".
+OsmReader.obj : error LNK2019: Verweis auf nicht aufgelöstes externes Symbol "__imp_XML_SetElementHandler" in Funktion "main".
+OsmReader.obj : error LNK2019: Verweis auf nicht aufgelöstes externes Symbol "__imp_XML_SetUserData" in Funktion "main".
+OsmReader.obj : error LNK2019: Verweis auf nicht aufgelöstes externes Symbol "__imp_XML_GetBuffer" in Funktion "main".
+OsmReader.obj : error LNK2019: Verweis auf nicht aufgelöstes externes Symbol "__imp_XML_ParseBuffer" in Funktion "main".
+OsmReader.obj : error LNK2019: Verweis auf nicht aufgelöstes externes Symbol "__imp_XML_GetErrorCode" in Funktion "main".
+OsmReader.obj : error LNK2019: Verweis auf nicht aufgelöstes externes Symbol "__imp_XML_GetCurrentLineNumber" in Funktion "main".
+OsmReader.obj : error LNK2019: Verweis auf nicht aufgelöstes externes Symbol "__imp_XML_ParserFree" in Funktion "main".
+OsmReader.obj : error LNK2019: Verweis auf nicht aufgelöstes externes Symbol "__imp_XML_ErrorString" in Funktion "main".
+C:\Program Files (x86)\expat\Bin\libexpat.lib : warning LNK4272: Bibliothekcomputertyp "x86" steht in Konflikt mit dem Zielcomputertyp "x64"
+C:\Program Files (x86)\expat\Bin\libexpatMT.lib : warning LNK4272: Bibliothekcomputertyp "x86" steht in Konflikt mit dem Zielcomputertyp "x64"
+C:\Program Files (x86)\expat\Bin\libexpatw.lib : warning LNK4272: Bibliothekcomputertyp "x86" steht in Konflikt mit dem Zielcomputertyp "x64"
+C:\Program Files (x86)\expat\Bin\libexpatwMT.lib : warning LNK4272: Bibliothekcomputertyp "x86" steht in Konflikt mit dem Zielcomputertyp "x64"
+C:\Users\Subira\source\repos\Kern\x64\Debug\OsmReader.dll : fatal error LNK1120: 9 nicht aufgelöste Externe
