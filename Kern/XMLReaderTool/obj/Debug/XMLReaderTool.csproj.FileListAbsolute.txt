@@ -5,3 +5,10 @@ C:\Users\Subira\source\repos\Kern\XMLReaderTool\obj\Debug\XMLReaderTool.csproj.A
 C:\Users\Subira\source\repos\Kern\XMLReaderTool\obj\Debug\XMLReaderTool.csproj.CoreCompileInputs.cache
 C:\Users\Subira\source\repos\Kern\XMLReaderTool\obj\Debug\XMLReaderTool.exe
 C:\Users\Subira\source\repos\Kern\XMLReaderTool\obj\Debug\XMLReaderTool.pdb
+G:\Code\Sophia\Kern\XMLReaderTool\bin\Debug\XMLReaderTool.exe.config
+G:\Code\Sophia\Kern\XMLReaderTool\bin\Debug\XMLReaderTool.exe
+G:\Code\Sophia\Kern\XMLReaderTool\bin\Debug\XMLReaderTool.pdb
+G:\Code\Sophia\Kern\XMLReaderTool\obj\Debug\XMLReaderTool.csproj.AssemblyReference.cache
+G:\Code\Sophia\Kern\XMLReaderTool\obj\Debug\XMLReaderTool.csproj.CoreCompileInputs.cache
+G:\Code\Sophia\Kern\XMLReaderTool\obj\Debug\XMLReaderTool.exe
+G:\Code\Sophia\Kern\XMLReaderTool\obj\Debug\XMLReaderTool.pdb

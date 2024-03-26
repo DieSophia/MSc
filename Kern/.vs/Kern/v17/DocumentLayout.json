@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{7ED78919-106B-4AAA-A395-5084B2204746}|XMLReaderTool\\XMLReaderTool.csproj|solutionrelative:xmlreadertool\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{730FC8D8-525D-484C-88A9-A1E1BF92503F}|Kern\\Kern.vcxproj|C:\\Users\\Subira\\source\\repos\\Kern\\Kern\\Header.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{730FC8D8-525D-484C-88A9-A1E1BF92503F}|Kern\\Kern.vcxproj|solutionrelative:Kern\\Header.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Subira\\AppData\\Local\\Temp\\.vsdbgsrc\\9faeb207e1b2161f612140435bf922aaecb88ba3ec1376bfe64b3549fcd20b73\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -17,15 +21,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 263,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Subira\\AppData\\Local\\Temp\\.vsdbgsrc\\9faeb207e1b2161f612140435bf922aaecb88ba3ec1376bfe64b3549fcd20b73\\Program.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\9faeb207e1b2161f612140435bf922aaecb88ba3ec1376bfe64b3549fcd20b73\\Program.cs",
@@ -44,10 +44,22 @@
               "RelativeDocumentMoniker": "XMLReaderTool\\Program.cs",
               "ToolTip": "C:\\Users\\Subira\\source\\repos\\Kern\\XMLReaderTool\\Program.cs",
               "RelativeToolTip": "XMLReaderTool\\Program.cs",
-              "ViewState": "AQIAAEEAAAAAAAAAAAAwwF0AAABEAAAA",
+              "ViewState": "AQIAAH8BAAAAmJmZmZkBwJIBAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-22T21:01:22.311Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Header.h",
+              "DocumentMoniker": "C:\\Users\\Subira\\source\\repos\\Kern\\Kern\\Header.h",
+              "RelativeDocumentMoniker": "Kern\\Header.h",
+              "ToolTip": "C:\\Users\\Subira\\source\\repos\\Kern\\Kern\\Header.h",
+              "RelativeToolTip": "Kern\\Header.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-03-25T13:05:07.305Z"
             }
           ]
         }
