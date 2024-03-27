@@ -1,0 +1,7 @@
+C:\Users\Subira\source\repos\Kern\DataProcessor\bin\Debug\DataProcessor.exe.config
+C:\Users\Subira\source\repos\Kern\DataProcessor\bin\Debug\DataProcessor.exe
+C:\Users\Subira\source\repos\Kern\DataProcessor\bin\Debug\DataProcessor.pdb
+C:\Users\Subira\source\repos\Kern\DataProcessor\obj\Debug\DataProcessor.csproj.AssemblyReference.cache
+C:\Users\Subira\source\repos\Kern\DataProcessor\obj\Debug\DataProcessor.csproj.CoreCompileInputs.cache
+C:\Users\Subira\source\repos\Kern\DataProcessor\obj\Debug\DataProcessor.exe
+C:\Users\Subira\source\repos\Kern\DataProcessor\obj\Debug\DataProcessor.pdb
